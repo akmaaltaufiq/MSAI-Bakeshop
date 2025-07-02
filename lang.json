@@ -1,58 +1,63 @@
 {
   "id": {
-    "title": "MSAI Bakeshop - Kue Homemade",
     "nav_home": "Beranda",
-    "nav_about": "Tentang",
+    "nav_about": "Tentang Kami",
     "nav_products": "Produk",
     "nav_contact": "Kontak",
-    "hero_heading": "Selamat Datang di MSAI Bakeshop!",
-    "hero_desc": "Kami membuat kue homemade dari hati.",
+
+    "hero_heading": "Cita Rasa Premium dari Kue Rumahan",
+    "hero_desc": "MSAI Bakeshop membuat kue handmade dengan bahan pilihan dan rasa istimewa di setiap potongan.",
     "hero_button": "Lihat Produk",
+
     "about_title": "Tentang Kami",
-    "about_text": "MSAI Bakeshop adalah bisnis keluarga yang fokus pada kue homemade premium.",
-    "products_title": "Produk Unggulan",
-    "cart_title": "Keranjang Belanja",
-    "cart_total": "Total",
-    "checkout_name": "Nama Anda",
-    "checkout_payment": "Metode Pembayaran:",
-    "checkout_button": "Konfirmasi Pesanan",
+    "about_text": "MSAI adalah singkatan dari My Siblings and I Bakeshop. Kami adalah saudara kandung yang memulai usaha rumahan ini sejak tahun 2024 karena kecintaan kami pada baking dan momen kebersamaan di dapur. Setiap kue dibuat dari bahan pilihan, resep keluarga, dan sepenuh hati yang menghadirkan rasa autentik dan cerita di setiap gigitan.",
+
+    "products_title": "Produk Kami",
+
     "contact_title": "Hubungi Kami",
-    "contact_desc": "Kirim pesan atau hubungi melalui media sosial kami.",
-    "contact_whatsapp": "WhatsApp",
-    "contact_instagram": "Instagram",
-    "footer_text": "&copy; 2025 <span class='font-semibold text-pink-600'>MSAI Bakeshop</span> | Dibuat oleh <a href='https://www.linkedin.com/in/akmal-taufiqurrahman-686961285/' target='_blank' class='text-pink-600 hover:underline hover:text-pink-700'>akmaaltaufiq</a>.",
+    "contact_desc": "Kirim pesan atau terhubung langsung melalui media sosial kami.",
+
+    "cart_title": "Keranjang",
+    "cart_total": "Total:",
+    "checkout_button": "Checkout",
+    "checkout_form_title": "Formulir Checkout",
+    "checkout_name": "Nama Lengkap:",
+    "checkout_payment": "Metode Pembayaran:",
+
     "modal_desc": "Deskripsi produk akan muncul di sini.",
     "modal_qty_label": "Qty:",
     "modal_add_cart": "Tambah ke Keranjang",
-    "contact_send_button": "Kirim Pesan",
-    "add_to_cart": "Tambah ke Keranjang"
+    "contact_send_button": "Kirim Pesan"
   },
+
   "en": {
-    "title": "MSAI Bakeshop - Homemade Cakes",
     "nav_home": "Home",
-    "nav_about": "About",
+    "nav_about": "About Us",
     "nav_products": "Products",
     "nav_contact": "Contact",
-    "hero_heading": "Welcome to MSAI Bakeshop!",
-    "hero_desc": "We bake homemade cakes with love.",
-    "hero_button": "Browse Products",
+
+    "hero_heading": "Premium Taste of Homemade Cakes",
+    "hero_desc": "MSAI Bakeshop creates handmade cakes with selected ingredients and exceptional flavor in every bite.",
+    "hero_button": "View Products",
+
     "about_title": "About Us",
-    "about_text": "MSAI Bakeshop is a family-run business focused on premium homemade cakes.",
-    "products_title": "Featured Products",
-    "cart_title": "Shopping Cart",
-    "cart_total": "Total",
-    "checkout_name": "Your Name",
-    "checkout_payment": "Payment Method:",
-    "checkout_button": "Confirm Order",
+    "about_text": "MSAI stands for My Siblings and I Bakeshop. We are siblings who started this home business in 2024 out of our love for baking and moments together in the kitchen. Each cake is made with selected ingredients, family recipes, and heartfelt dedication that brings authentic taste and stories in every bite.",
+
+    "products_title": "Our Products",
+
     "contact_title": "Contact Us",
-    "contact_desc": "Send a message or connect via our social media.",
-    "contact_whatsapp": "WhatsApp",
-    "contact_instagram": "Instagram",
-    "footer_text": "&copy; 2025 <span class='font-semibold text-pink-600'>MSAI Bakeshop</span> | Created by <a href='https://www.linkedin.com/in/akmal-taufiqurrahman-686961285/' target='_blank' class='text-pink-600 hover:underline hover:text-pink-700'>akmaaltaufiq</a>.",
+    "contact_desc": "Send a message or connect directly through our social media.",
+
+    "cart_title": "Cart",
+    "cart_total": "Total:",
+    "checkout_button": "Checkout",
+    "checkout_form_title": "Checkout Form",
+    "checkout_name": "Full Name:",
+    "checkout_payment": "Payment Method:",
+
     "modal_desc": "Product description will appear here.",
     "modal_qty_label": "Qty:",
     "modal_add_cart": "Add to Cart",
-    "contact_send_button": "Send Message",
-    "add_to_cart": "Add to Cart"
+    "contact_send_button": "Send Message"
   }
 }
