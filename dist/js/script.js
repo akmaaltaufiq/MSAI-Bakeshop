@@ -369,6 +369,16 @@ async function loadLanguage(lang) {
       strings.contact_instagram;
     document.querySelector('[data-key="footer_text"]').innerHTML =
       strings.footer_text;
+    document.querySelector('[data-key="modal_desc"]').textContent =
+      strings.modal_desc;
+    document.querySelector('[data-key="modal_qty_label"]').textContent =
+      strings.modal_qty_label;
+    document.querySelector('[data-key="modal_add_cart"]').textContent =
+      strings.modal_add_cart;
+    document.querySelector('[data-key="contact_send_button"]').textContent =
+      strings.contact_send_button;
+    document.querySelector("#checkout-name").placeholder =
+      strings.checkout_name;
 
     // re‑render produk dengan teks button baru
     renderProducts(strings);
