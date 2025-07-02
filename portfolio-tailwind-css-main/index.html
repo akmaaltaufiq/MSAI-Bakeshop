@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MSAI Bakeshop</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="dist/output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <script defer src="dist/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body class="bg-white font-sans text-gray-800  flex flex-col min-h-screen">
+    <header class="fixed z-50 w-full bg-pink-100 shadow-md">
+      <div
+        class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4"
+      >
+        <h1 class="text-2xl font-bold text-pink-600">MSAI Bakeshop</h1>
+        <nav class="navbar-nav hidden gap-6 text-sm font-semibold md:flex md:items-center md:gap-6">
+          <a href="#hero" class="lang hover:text-pink-600" data-key="nav_home"
+            >Beranda</a
+          >
+          <a
+            href="#tentang"
+            class="lang hover:text-pink-600"
+            data-key="nav_about"
+            >Tentang Kami</a
+          >
+          <a
+            href="#produk"
+            class="lang hover:text-pink-600"
+            data-key="nav_products"
+            >Produk</a
+          >
+          <a
+            href="#kontak"
+            class="lang hover:text-pink-600"
+            data-key="nav_contact"
+            >Kontak</a
+          >
+        </nav>
+        <div class="flex items-center gap-4">
+          <div class="relative">
+            <button
+              id="language-toggle"
+              class="flex items-center gap-2 rounded border px-3 py-1 text-sm font-semibold text-gray-600 hover:bg-gray-100"
+            >
+              <i class="fas fa-globe"></i><span id="language-label">ID</span>
+              <i class="fas fa-chevron-down text-xs"></i>
+            </button>
+            <div
+              id="language-options"
+              class="absolute right-0 mt-2 hidden w-24 rounded border bg-white py-1 text-sm shadow"
+            >
+              <button
+                class="language-option w-full px-4 py-2 text-left hover:bg-gray-100"
+                data-lang="id"
+              >
+                Bahasa
+              </button>
+              <button
+                class="language-option w-full px-4 py-2 text-left hover:bg-gray-100"
+                data-lang="en"
+              >
+                English
+              </button>
+            </div>
+          </div>
+          <div class="relative">
+            <button
+              id="search-button"
+              class="text-xl text-gray-600 hover:text-gray-800"
+            >
+              <i class="fas fa-search"></i>
+            </button>
+            <div
+              id="search-form"
+              class="absolute left-1/2 z-50 mt-2 hidden w-[90vw] sm:right-0 sm:left-auto sm:w-96 sm:translate-x-0 -translate-x-1/2 rounded border bg-white p-3 shadow"
+            >
+              <input
+                type="text"
+                id="search-box"
+                placeholder="Cari produk atau bagian..."
+                class="w-full rounded border px-3 py-2 text-sm"
+              />
+              <button
+                id="search-submit"
+                class="mt-2 w-full rounded bg-pink-500 px-3 py-2 text-sm text-white hover:bg-pink-600"
+              >
+                Cari
+              </button>
+            </div>
+          </div>
+          <div class="relative">
+            <button
+              id="shopping-cart-button"
+              class="text-xl text-pink-600 hover:text-pink-800"
+            >
+              <i class="fas fa-shopping-cart"></i>
+              <span
+                id="cart-count"
+                class="absolute -right-2 -top-2 rounded-full bg-pink-500 px-1.5 py-0.5 text-xs text-white"
+                >0</span
+              >
+            </button>
+          </div>
+          <div
+            id="shopping-cart"
+            class="fixed right-0 top-0 z-50 h-full w-full sm:w-96 translate-x-full overflow-y-auto bg-white shadow-lg transition-transform duration-300"
+          >
+            <div class="p-4">
+              <div class="mb-4 flex items-center justify-between">
+                <h2
+                  class="text-xl font-bold text-pink-700"
+                  data-key="cart_title"
+                >
+                  Keranjang
+                </h2>
+                <button
+                  id="close-cart"
+                  class="text-2xl text-gray-600 hover:text-gray-800"
+                >
+                  &times;
+                </button>
+              </div>
+              <div id="cart-items" class="space-y-4"></div>
+              <div class="mt-4 border-t pt-4">
+                <div
+                  class="mb-2 flex justify-between font-semibold text-gray-700"
+                >
+                  <span data-key="cart_total">Total:</span>
+                  <span id="cart-total" class="font-bold text-pink-600"
+                    >IDR 0</span
+                  >
+                </div>
+                <button
+                  id="checkout-button"
+                  class="w-full rounded bg-pink-600 py-2 text-white hover:bg-pink-700"
+                  data-key="checkout_button"
+                >
+                  Checkout
+                </button>
+              </div>
+            </div>
+          </div>
+          <button id="hamburger-menu" class="flex flex-col md:hidden">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+     <main class="flex-grow">
+    <section
+      id="hero"
+      class="relative min-h-screen bg-cover bg-center bg-no-repeat"
+      style="background-image: url('dist/img/kue-msai.jpg')"
+    >
+      <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+      <div
+        class="relative z-10 mx-auto flex min-h-screen max-w-7xl items-center px-4"
+      >
+        <div class="text-white md:w-1/2">
+          <h2
+            class="lang mb-6 text-4xl font-extrabold leading-snug sm:text-5xl md:text-7xl" data-key="hero_heading"
+          >
+            Cita Rasa Premium dari Kue Rumahan
+          </h2>
+          <p
+            class="lang mb-8 text-base text-gray-200 sm:text-lg md:text-2xl" data-key="hero_desc"
+          >
+            MSAI Bakeshop membuat kue handmade dengan bahan pilihan dan rasa
+            istimewa di setiap potongan.
+          </p>
+
+          <a
+            href="#produk"
+            class="lang inline-block rounded-lg bg-pink-600 px-5 py-2 text-white transition hover:bg-pink-700"
+            data-key="hero_button"
+            >Lihat Produk</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section id="tentang" class="bg-white py-20">
+      <div class="mx-auto max-w-6xl px-6 md:px-8 lg:px-10">
+        <div class="flex flex-col items-center gap-10 md:flex-row md:gap-16">
+          <div class="w-full md:w-1/2">
+            <img
+              src="dist/img/about.jpg"
+              alt="Tentang MSAI Bakeshop"
+              class="w-full rounded-xl shadow-md"
+            />
+          </div>
+          <div class="w-full md:w-1/2">
+            <h3
+              class="lang mb-6 text-3xl font-extrabold text-pink-700 md:text-4xl"
+              data-key="about_title"
+            >
+              Tentang Kami
+            </h3>
+            <p
+              class="lang text-base leading-relaxed text-gray-600 md:text-lg"
+              data-key="about_text"
+            >
+              MSAI adalah singkatan dari
+              <strong>My Siblings and I Bakeshop</strong>. Kami adalah saudara
+              kandung yang memulai usaha rumahan ini sejak tahun 2024 karena
+              kecintaan kami pada baking dan momen kebersamaan di dapur. Setiap
+              kue dibuat dari bahan pilihan, resep keluarga, dan sepenuh hati
+              yang menghadirkan rasa autentik dan cerita di setiap gigitan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="produk" class="bg-pink-50 py-16">
+      <div class="mx-auto max-w-7xl px-4">
+        <h3
+          class="lang mb-6 text-center text-3xl font-extrabold text-pink-700 md:text-4xl"
+          data-key="products_title"
+        >
+          Produk Kami
+        </h3>
+        <div
+          id="product-grid"
+          class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3"
+        >
+          <!-- Produk dirender dengan JS -->
+        </div>
+      </div>
+    </section>
+
+    <div
+      id="product-modal"
+      class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-50 transition-opacity duration-300"
+    >
+      <div class="relative w-11/12 max-w-md rounded-lg bg-white p-6">
+        <button
+          id="close-modal"
+          class="absolute right-2 top-2 text-xl text-gray-500 hover:text-gray-800"
+        >
+          &times;
+        </button>
+        <img
+          id="modal-image"
+          src=""
+          alt="Produk"
+          class="mb-4 h-48 w-full rounded object-cover"
+        />
+        <h4 id="modal-name" class="mb-2 text-xl font-bold text-pink-700"></h4>
+        <p id="modal-description" class="mb-2 text-sm text-gray-700">
+          Deskripsi produk akan muncul di sini.
+        </p>
+        <div id="modal-rating" class="mb-3 flex text-lg text-yellow-400"></div>
+        <p
+          id="modal-price"
+          class="mb-3 text-lg font-semibold text-pink-700"
+        ></p>
+        <div class="mb-4 flex items-center gap-2">
+          <label for="modal-qty" class="text-sm text-gray-700">Qty:</label>
+          <input
+            type="number"
+            id="modal-qty"
+            value="1"
+            min="1"
+            class="w-16 rounded border px-2 py-1 text-sm"
+          />
+        </div>
+        <button
+          id="modal-add-cart"
+          class="w-full rounded bg-pink-600 py-2 text-white hover:bg-pink-700"
+        >
+          Tambah ke Keranjang
+        </button>
+      </div>
+    </div>
+
+    <!-- Modal Checkout -->
+    <div
+      id="checkout-modal"
+      class="fixed inset-0 z-[1050] flex hidden items-center justify-center bg-black bg-opacity-50"
+    >
+      <div class="relative w-[95%] max-w-md rounded-lg bg-white p-6">
+        <h2 class="mb-4 text-xl font-semibold" data-key="checkout_form_title">
+          Formulir Checkout
+        </h2>
+
+        <label class="mb-2 block" data-key="checkout_name">Nama Lengkap:</label>
+        <input
+          type="text"
+          id="checkout-name"
+          class="mb-4 w-full rounded border px-3 py-2"
+          placeholder="Nama Anda"
+        />
+
+        <label class="mb-2 block" data-key="checkout_payment"
+          >Metode Pembayaran:</label
+        >
+        <select
+          id="payment-method"
+          class="mb-4 w-full max-w-xs sm:max-w-sm rounded border px-3 py-2"
+        >
+          <option value="">-- Pilih Metode --</option>
+          <option value="bank">Bank Transfer</option>
+          <option value="ewallet">E-Wallet</option>
+        </select>
+
+        <!-- Opsi Tambahan Pembayaran (dinamis via JS) -->
+        <div id="payment-options" class="mb-4 hidden max-w-xs sm:max-w-sm"></div>
+
+        <button
+          id="confirm-order"
+          class="w-full rounded bg-pink-600 py-2 text-white hover:bg-pink-700"
+          data-key="checkout_button"
+        >
+          Konfirmasi Pesanan
+        </button>
+
+        <button
+          id="close-checkout-modal"
+          class="absolute right-3 top-2 text-xl text-gray-500 hover:text-black"
+        >
+          &times;
+        </button>
+      </div>
+    </div>
+
+    <!-- Kontak -->
+    <section id="kontak" class="bg-white py-16">
+      <div class="mx-auto max-w-4xl px-4 text-center">
+        <h3
+          class="lang mb-6 text-3xl font-bold text-pink-700"
+          data-key="contact_title"
+        >
+          Hubungi Kami
+        </h3>
+        <p class="lang mb-10 text-gray-700" data-key="contact_desc">
+          Kirim pesan atau terhubung langsung melalui media sosial kami.
+        </p>
+
+        <!-- Form -->
+        <form class="mb-10 grid grid-cols-1 gap-6 gap-y-4 text-left md:grid-cols-2">
+          <input
+            type="text"
+            placeholder="Nama Lengkap"
+            class="w-full rounded border border-gray-300 px-4 py-3 focus:border-pink-500 focus:outline-none md:col-span-2"
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            class="w-full rounded border border-gray-300 px-4 py-3 focus:border-pink-500 focus:outline-none md:col-span-2"
+          />
+          <textarea
+            rows="5"
+            placeholder="Pesan"
+            class="w-full rounded border border-gray-300 px-4 py-3 focus:border-pink-500 focus:outline-none md:col-span-2"
+          ></textarea>
+          <button
+            type="submit"
+            class="w-full rounded bg-pink-600 py-3 font-semibold text-white transition hover:bg-pink-700 md:col-span-2"
+          >
+            Kirim Pesan
+          </button>
+        </form>
+        </main>
+        
+        <footer class="bg-pink-100 pt-10 pb-6 text-gray-700">
+  <div class="mx-auto max-w-7xl px-4">
+    <!-- Baris Atas Footer -->
+    <div class="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+      <!-- Kiri: Logo + Slogan -->
+      <div class="md:text-left text-center md:flex-1">
+        <h4 class="text-2xl font-bold text-pink-700">MSAI Bakeshop</h4>
+        <p class="mt-1 text-sm text-gray-600">Homemade by My Siblings and I.</p>
+      </div>
+
+      <!-- Tengah: Navigasi Footer -->
+      <ul class="flex flex-wrap justify-center gap-6 text-sm font-medium md:flex-1 md:justify-center">
+        <li><a href="#hero" class="hover:text-pink-600">Beranda</a></li>
+        <li><a href="#tentang" class="hover:text-pink-600">Tentang</a></li>
+        <li><a href="#produk" class="hover:text-pink-600">Produk</a></li>
+        <li><a href="#kontak" class="hover:text-pink-600">Kontak</a></li>
+      </ul>
+
+      <!-- Kanan: Sosial Media -->
+      <div class="flex justify-center md:justify-end gap-4 text-xl text-pink-600 md:flex-1 w-full md:w-auto">
+        <a href="https://wa.me/62xxxxxxxxxx" target="_blank" aria-label="WhatsApp" class="hover:text-green-500">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://instagram.com/msai_bakeshop" target="_blank" aria-label="Instagram" class="hover:text-pink-500">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://tiktok.com/@msai_bakeshop" target="_blank" aria-label="TikTok" class="hover:text-black">
+          <i class="fab fa-tiktok"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Garis Pembatas Full Width -->
+    <div class="mt-6 border-t border-gray-300 w-full"></div>
+
+    <!-- Copyright -->
+    <p class="text-center text-xs text-gray-500 mt-4">
+      &copy; 2025 <span class="font-semibold text-pink-600">MSAI Bakeshop</span> | Created by
+      <a
+        href="https://www.linkedin.com/in/akmal-taufiqurrahman-686961285/"
+        target="_blank"
+        class="text-pink-600 hover:underline hover:text-pink-700"
+      >
+        akmaaltaufiq
+      </a>.
+    </p>
+  </div>
+</footer>
+
+
+  </body>
+</html>
