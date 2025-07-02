@@ -27,7 +27,16 @@
     "modal_desc": "Deskripsi produk akan muncul di sini.",
     "modal_qty_label": "Qty:",
     "modal_add_cart": "Tambah ke Keranjang",
-    "contact_send_button": "Kirim Pesan"
+    "contact_send_button": "Kirim Pesan",
+
+    "form_name_placeholder": "Nama Lengkap",
+    "form_email_placeholder": "Email",
+    "form_message_placeholder": "Pesan",
+
+    "footer_nav_home": "Beranda",
+    "footer_nav_about": "Tentang",
+    "footer_nav_products": "Produk",
+    "footer_nav_contact": "Kontak"
   },
 
   "en": {
@@ -58,6 +67,15 @@
     "modal_desc": "Product description will appear here.",
     "modal_qty_label": "Qty:",
     "modal_add_cart": "Add to Cart",
-    "contact_send_button": "Send Message"
+    "contact_send_button": "Send Message",
+
+    "form_name_placeholder": "Full Name",
+    "form_email_placeholder": "Email",
+    "form_message_placeholder": "Message",
+
+    "footer_nav_home": "Home",
+    "footer_nav_about": "About",
+    "footer_nav_products": "Products",
+    "footer_nav_contact": "Contact"
   }
 }

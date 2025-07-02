@@ -355,16 +355,19 @@
           <input
             type="text"
             placeholder="Nama Lengkap"
+            data-key="form_name_placeholder"
             class="w-full rounded border border-gray-300 px-4 py-3 focus:border-pink-500 focus:outline-none md:col-span-2"
           />
           <input
             type="email"
             placeholder="Email"
+            data-key="form_email_placeholder"
             class="w-full rounded border border-gray-300 px-4 py-3 focus:border-pink-500 focus:outline-none md:col-span-2"
           />
           <textarea
             rows="5"
             placeholder="Pesan"
+            data-key="form_message_placeholder"
             class="w-full rounded border border-gray-300 px-4 py-3 focus:border-pink-500 focus:outline-none md:col-span-2"
           ></textarea>
           <button
@@ -388,10 +391,11 @@
 
       <!-- Tengah: Navigasi Footer -->
       <ul class="flex flex-wrap justify-center gap-6 text-sm font-medium md:flex-1 md:justify-center">
-        <li><a href="#hero" class="hover:text-pink-600">Beranda</a></li>
-        <li><a href="#tentang" class="hover:text-pink-600">Tentang</a></li>
-        <li><a href="#produk" class="hover:text-pink-600">Produk</a></li>
-        <li><a href="#kontak" class="hover:text-pink-600">Kontak</a></li>
+        <li><a href="#hero" data-key="footer_nav_home">Beranda</a></li>
+        <li><a href="#tentang" data-key="footer_nav_about">Tentang</a></li>
+        <li><a href="#produk" data-key="footer_nav_products">Produk</a></li>
+        <li><a href="#kontak" data-key="footer_nav_contact">Kontak</a></li>
+
       </ul>
 
       <!-- Kanan: Sosial Media -->

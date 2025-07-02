@@ -379,6 +379,21 @@ async function loadLanguage(lang) {
       strings.contact_send_button;
     document.querySelector("#checkout-name").placeholder =
       strings.checkout_name;
+    document.querySelector('[data-key="form_name_placeholder"]').placeholder =
+      strings.form_name_placeholder;
+    document.querySelector('[data-key="form_email_placeholder"]').placeholder =
+      strings.form_email_placeholder;
+    document.querySelector(
+      '[data-key="form_message_placeholder"]'
+    ).placeholder = strings.form_message_placeholder;
+    document.querySelector('[data-key="footer_nav_home"]').textContent =
+      strings.footer_nav_home;
+    document.querySelector('[data-key="footer_nav_about"]').textContent =
+      strings.footer_nav_about;
+    document.querySelector('[data-key="footer_nav_products"]').textContent =
+      strings.footer_nav_products;
+    document.querySelector('[data-key="footer_nav_contact"]').textContent =
+      strings.footer_nav_contact;
 
     // re‑render produk dengan teks button baru
     renderProducts(strings);
